@@ -1,6 +1,6 @@
 {
   "name": "@drawilet/nextjs-i18n",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "dist/index.js",
   "repository": "https://github.com/Drawilet/nextjs-i18n.git",
   "author": "Drawilet <drawiletdev@gmail.com>",
@@ -13,6 +13,9 @@
   ],
   "license": "MIT",
   "private": false,
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "scripts": {
     "build": "rimraf dist && tsc",
     "prepublishOnly": "yarn build"
