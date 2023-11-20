@@ -16,6 +16,7 @@
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
+    "jsx": "preserve",
     "typeRoots": ["node_modules/@types"],
     "paths": {
       "@/*": ["./src/*"],
