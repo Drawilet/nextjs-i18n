@@ -1,10 +1,9 @@
 {
   "name": "@drawilet/nextjs-i18n",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Simplify Next.js internationalization with our client-side package. Seamlessly integrate and access translated content in your project with ease.",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/esm/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Drawilet/nextjs-i18n.git"
@@ -19,9 +18,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "yarn build:esm && yarn build:cjs",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "build": "rimraf dist && tsc",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
