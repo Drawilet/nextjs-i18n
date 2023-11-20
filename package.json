@@ -1,6 +1,6 @@
 {
   "name": "@drawilet/nextjs-i18n",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Simplify Next.js internationalization with our client-side package. Seamlessly integrate and access translated content in your project with ease.",
   "main": "dist/index.jsx",
   "repository": {
@@ -16,16 +16,14 @@
   ],
   "license": "MIT",
   "private": false,
-  "exports": {
-    ".": "./dist/index.js"
-  },
   "scripts": {
     "build": "rimraf dist && tsc",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "next": "^14.0.3",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.9.0",
@@ -34,7 +32,6 @@
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
     "eslint": "^8.53.0",
-    "react-dom": "^18.2.0",
     "rimraf": "^5.0.5",
     "typescript": "^5.2.2"
   },
