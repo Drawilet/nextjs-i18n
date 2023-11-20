@@ -1,10 +1,13 @@
 {
   "name": "@drawilet/nextjs-i18n",
-  "version": "0.0.5",
+  "version": "0.0.6",
+  "description": "Simplify Next.js internationalization with our client-side package. Seamlessly integrate and access translated content in your project with ease.",
   "main": "dist/index.js",
-  "repository": "https://github.com/Drawilet/nextjs-i18n.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drawilet/nextjs-i18n.git"
+  },
   "author": "Drawilet <drawiletdev@gmail.com>",
-  "description": "Simplify Next.js internationalization with our client-side companion to Node-i18n. Seamlessly integrate and access translated content in your project with ease.",
   "keywords": [
     "i18n",
     "next",
@@ -34,5 +37,10 @@
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.5",
     "typescript": "^5.2.2"
-  }
+  },
+  "types": "./dist/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/Drawilet/nextjs-i18n/issues"
+  },
+  "homepage": "https://github.com/Drawilet/nextjs-i18n#readme"
 }
