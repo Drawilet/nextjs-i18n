@@ -36,13 +36,16 @@ Follow the [i18n](https://www.npmjs.com/package/@drawilet/i18n#getting-started) 
 
    ```ts
    import type { AppProps } from "next/app";
+   import { useRouter } from "next/router";
 
    import { I18nProvider } from "@drawilet/nextjs-i18n";
-   import resources from "../locales/pages.json";
+   import resources from "../locales/pages.json"; // OUTPUT_PATH
 
    export default function MyApp({ Component, pageProps }: AppProps) {
+     const router = useRouter();
+
      return (
-       <I18nProvider resources={resources}>
+       <I18nProvider resources={resources} router={router}>
          <Component {...pageProps} />
        </I18nProvider>
      );
@@ -75,4 +78,5 @@ Follow the [i18n](https://www.npmjs.com/package/@drawilet/i18n#getting-started) 
 <br>
 
 > ## Note
+>
 > Remember to use the command `npx i18n generate` every time you update the texts to be translated.

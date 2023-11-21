@@ -1,35 +1,45 @@
-import { useRouter } from "next/router";
-import { createContext, useContext } from "react";
+import { NextRouter } from "next/router";
+import React, { createContext, useContext } from "react";
 import { Component } from "types/Component";
 import { Resources } from "types/Resources";
 
-const I18nContext = createContext<{ resources: Resources }>({ resources: {} });
-const I18nProvider: Component<{ resources: any }> = ({
+const I18nContext = createContext<{
+  resources: Resources;
+  pathname: string;
+  locale: string;
+}>({
+  resources: {},
+  pathname: "",
+  locale: "",
+});
+const I18nProvider: Component<{ resources: any; router: NextRouter }> = ({
   children,
   resources,
+  router,
 }) => {
   return (
-    <I18nContext.Provider value={{ resources }}>
+    <I18nContext.Provider
+      value={{
+        resources,
+        pathname: router.pathname,
+        locale: router.locale || router.defaultLocale || "",
+      }}
+    >
       {children}
     </I18nContext.Provider>
   );
 };
 const useI18n = () => {
-  const { resources } = useContext(I18nContext);
-  const router = useRouter();
+  const { resources, locale, pathname } = useContext(I18nContext);
 
   return (key: string) => {
-    const path = router.pathname;
-    const locale = router.locale || router.defaultLocale || "";
-
-    const page = resources[path];
+    const page = resources[pathname];
     if (!page) return "";
 
     const translations = page[key];
     if (!translations) return "";
 
     const translation = translations[locale];
-    if (!translation) return translations[router.defaultLocale || ""] || "";
 
     return translation;
   };
