@@ -1,6 +1,6 @@
 {
   "name": "@drawilet/nextjs-i18n",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Simplify Next.js internationalization with our client-side package. Seamlessly integrate and access translated content in your project with ease.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -19,10 +19,10 @@
   "private": false,
   "scripts": {
     "build": "rimraf dist && tsc",
-    "test": "yarn prepublishOnly && yarn pack",
-    "prepublishOnly": "yarn build"
+    "test": "yarn build && yarn pack"
   },
-  "dependencies": {
+  "dependencies": {},
+  "peerDependencies": {
     "next": "^14.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
