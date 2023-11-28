@@ -1,1 +1,2 @@
-export type Resources = Record<string, Record<string, Record<string, string>>>;
+import { Data } from "./Data";
+export type Resources = Record<string, Data>;
