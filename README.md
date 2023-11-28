@@ -39,7 +39,7 @@ Follow the [i18n](https://www.npmjs.com/package/@drawilet/i18n#getting-started) 
    import { useRouter } from "next/router";
 
    import { I18nProvider } from "@drawilet/nextjs-i18n";
-   import resources from "../locales/pages.json"; // OUTPUT_PATH
+   import resources from "../locales/data.json"; // OUTPUT_PATH
 
    export default function MyApp({ Component, pageProps }: AppProps) {
      const router = useRouter();
@@ -72,6 +72,20 @@ Follow the [i18n](https://www.npmjs.com/package/@drawilet/i18n#getting-started) 
    };
 
    export default Page;
+   ```
+
+   ### For components
+
+   ```ts
+   import { useI18n } from "@drawilet/nextjs-i18n";
+   export const _i18n = {};
+
+   const Header: Component = () => {
+     const i18n = useI18n("components", "/Layout/Header");
+
+     return <header></header>;
+   };
+   export default Header;
    ```
 
 <br>
